@@ -1,0 +1,39 @@
+security:
+    jwt:
+        expiration-time: 3600000
+        secret-key: 7f147e904359f1bb60c710aab7a9e80254bc8bcd2b847577e1775e9ad97536b2
+#        auth:
+#            converter:
+#                resource-id: RestApi
+#                principle-attribute: preferred_username;
+#    oauth2:
+#        resourceserver:
+#            jwt:
+#                issuer-uri: http://localhost:8080/realms/restapi
+#                jwk-set-uri: http://localhost:8080/realms/restapi/protocol/openid-connect/certs
+
+server:
+    port: 8086
+spring:
+    application:
+        name: RestApi
+    datasource:
+        driverClassName: org.h2.Driver
+        password: 111
+        url: jdbc:h2:mem:testdb
+        username: sa
+    h2:
+        console:
+            enabled: true
+    jpa:
+        hibernate:
+            ddl-auto: update
+
+#keycloak:
+#    realm: restapi
+#    resource: mobile_banking
+#    auth-server-url: http://localhost:8080/auth
+#    credentials:
+#        secret: evIpLXgy6de5w4dPoJEZCwefw72uvPMJ
+#    public-client: false
+#    bearer-only: true
